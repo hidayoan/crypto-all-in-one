@@ -1,0 +1,40 @@
+{
+  "name": "crypto-all-in-one",
+  "version": "1.0.8",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "preversion": "npm run build",
+    "version": "npm publish"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@web3modal/wagmi": "^3.5.7",
+    "ethers": "^5.7.2",
+    "moment": "^2.30.1",
+    "rimraf": "^5.0.5",
+    "viem": "^1.21.4",
+    "wagmi": "^1.4.13"
+  }
+}
