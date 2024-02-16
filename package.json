@@ -1,7 +1,7 @@
 {
   "name": "crypto-all-in-one",
-  "version": "1.0.8",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Updated readme for the package",
   "main": "dist/index.js",
   "files": [
     "dist"

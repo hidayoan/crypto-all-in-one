@@ -44,7 +44,7 @@ function useCustomConnectWallet() {
       }
       if (status === 'unsupported') {
         if (chains[0].id) {
-          await switchNetworkAsync ? (chains[0].id || 0) : 0;
+          switchNetworkAsync && await switchNetworkAsync(chains[0].id || 0);
           setLoading(false);
 
         }
