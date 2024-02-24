@@ -6,12 +6,12 @@ import { publicProvider } from 'wagmi/providers/public'
 
 import { configureChains, createConfig, WagmiConfig } from 'wagmi'
 import { CryptoWrapperType } from '../helpers/type';
-import { shibarium } from 'wagmi/chains';
 
 
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+import { bscTestnet } from 'viem/chains'
 
 const metadata = {
   name: 'Web3Modal',
@@ -21,9 +21,10 @@ const metadata = {
 }
 
 // config crypto
-const chains = [shibarium];
 
-function CryptoWrapper({ children, projectId }: CryptoWrapperType) {
+
+function CryptoWrapper({ children, projectId, chainlist = [bscTestnet] }: CryptoWrapperType) {
+  const chains = chainlist
   const { publicClient } = configureChains(chains, [walletConnectProvider({ projectId }), publicProvider()])
 
   const wagmiConfig = createConfig({
