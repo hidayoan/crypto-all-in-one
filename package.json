@@ -1,6 +1,6 @@
 {
   "name": "crypto-all-in-one",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Updated select chain",
   "main": "dist/index.js",
   "files": [

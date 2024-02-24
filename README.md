@@ -23,7 +23,7 @@ This package is built upon the foundations of [Web3Modal](https://docs.walletcon
 * Hook:
 - Custom hook for authenticate suport multi chain/multi wallet: Done
 - Custom hook for get balance: Done
-  * Function:
+* Function:
 - Function for staking: Done
 - Function for swap: Inprocess
 - Function for yield farm: Inprocess
@@ -68,18 +68,21 @@ $ pnpm add crypto-all-in-one
 ```
 
 After installation, you need to create a .env file containing the necessary smart contracts to fully utilize the functionalities of the dapp:
+
+> **Note**: You need to get the smart contracts from the blockchain you are working with. Suport with PancakeSwap V2 Contract, PancakeSwap V2 Router, Staking Contract, and Token Contract
+
 ```js
-NEXT_PUBLIC__FACTORY_SWAP = 0x7956FdCe944ed2A0e2bDF25d2de6c6b34398B657
+NEXT_PUBLIC__FACTORY_SWAP = 
 
-NEXT_PUBLIC__ROUTER_SWAP = 0x09c23D6c4e15C7B6879A0936708BE7b2C01186D2
+NEXT_PUBLIC__ROUTER_SWAP = 
 
-NEXT_PUBLIC__STAKING_NATIVE = 0xDC8AE9ACC2ea98F7a3A40b3fFCA210435226566B
+NEXT_PUBLIC__STAKING_NATIVE = 
 
-NEXT_PUBLIC__STAKING_MAIN_TOKEN = 0x1ae96F6E24Ca24Db5cA97797E528d63bfc9dD0Ef
+NEXT_PUBLIC__STAKING_MAIN_TOKEN = 
 
-NEXT_PUBLIC__WRAP_NATIVE_ADDRESS = 0x7915fE3be85D591cC0395D30AB76Ee7aA12a085D
+NEXT_PUBLIC__WRAP_NATIVE_ADDRESS = 
 
-NEXT_PUBLIC__MAIN_TOKEN_ADDRESS = 0xa98900F53fa3e5bFe6F2283F4C4E57ca3DF5387c
+NEXT_PUBLIC__MAIN_TOKEN_ADDRESS = 
 ```
 
 ```js
@@ -93,6 +96,15 @@ import { CryptoWrapper } from 'crypto-all-in-one';
 
 ```js
 <CryptoWrapper projectId='<YOUR_PROJECT_ID>'>
+  {/* YOUR COMPONENTS GO HERE */}
+</CryptoWrapper>
+```
+
+> **Note**: default chain is BSC testnet, you can change to any chain you want by push chain list to this component
+```js
+import chains from 'crypto-all-in-one';
+const {bsc, base} = chains;
+<CryptoWrapper projectId='<YOUR_PROJECT_ID>' chainList={[bsc, base]}>
   {/* YOUR COMPONENTS GO HERE */}
 </CryptoWrapper>
 ```

@@ -23,8 +23,8 @@ const metadata = {
 // config crypto
 
 
-function CryptoWrapper({ children, projectId, chainlist = [bscTestnet] }: CryptoWrapperType) {
-  const chains = chainlist
+function CryptoWrapper({ children, projectId, chainList = [bscTestnet] }: CryptoWrapperType) {
+  const chains = chainList
   const { publicClient } = configureChains(chains, [walletConnectProvider({ projectId }), publicProvider()])
 
   const wagmiConfig = createConfig({

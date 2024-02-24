@@ -112,5 +112,5 @@ export interface SettingModalFormType {
 export interface CryptoWrapperType {
   children: ReactNode;
   projectId: string;
-  chainlist?: any[];
+  chainList?: any[];
 }
